@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: humanizer-backend
+    runtime: python
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: HF_TOKEN
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://sachdevvv87.github.io
+      - key: PYTHON_VERSION
+        value: "3.11.0"

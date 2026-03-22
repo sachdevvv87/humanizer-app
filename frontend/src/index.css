@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #f8faf8;
+    --surface: #ffffff;
+    --surface-2: #f1f5f1;
+    --border: #e2e8e2;
+    --text-primary: #0f1a0f;
+    --text-secondary: #4a5e4a;
+    --text-muted: #8a9e8a;
+    --accent: #22c55e;
+    --accent-dim: #dcfce7;
+    --accent-hover: #16a34a;
+    --error: #ef4444;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.10), 0 8px 32px rgba(0,0,0,0.06);
+  }
+
+  .dark {
+    --bg: #0c140c;
+    --surface: #141e14;
+    --surface-2: #1c2a1c;
+    --border: #2a3a2a;
+    --text-primary: #e8f5e8;
+    --text-secondary: #9ab89a;
+    --text-muted: #5a7a5a;
+    --accent: #4ade80;
+    --accent-dim: #14532d;
+    --accent-hover: #22c55e;
+    --error: #f87171;
+    --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.2);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.4), 0 8px 32px rgba(0,0,0,0.3);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { font-family: 'DM Sans', sans-serif; }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--surface-2); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+}
+
+@layer utilities {
+  .font-display { font-family: 'Syne', sans-serif; }
+  .font-mono-custom { font-family: 'JetBrains Mono', monospace; }
+
+  .surface {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+
+  .text-primary { color: var(--text-primary); }
+  .text-secondary { color: var(--text-secondary); }
+  .text-muted { color: var(--text-muted); }
+  .text-accent { color: var(--accent); }
+  .bg-surface { background: var(--surface); }
+  .bg-surface-2 { background: var(--surface-2); }
+  .border-custom { border-color: var(--border); }
+}
